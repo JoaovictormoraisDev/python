@@ -1,0 +1,14 @@
+alunos = []
+
+def cadatrar_alunos():
+    nome = input("digite o nome do alunos(ou 'sair' para finaliza): ")
+    return nome
+ 
+while True:
+    nome = cadatrar_alunos()
+    if nome.lower() == "sair":
+        print("Cadastro encerrado.")
+        break
+    else:
+        alunos.append(nome)
+        print(f"aluno {nome} cadastrados com sucesso")
