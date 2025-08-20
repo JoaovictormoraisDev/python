@@ -1,0 +1,53 @@
+import random 
+
+def forca():
+    temas = input("Escolha um tema: 1 - Animais, 2 - Frutas, 3 - Cores: ")
+    if temas == "1":
+        palavras = ["gato", "cachorro", "elefante", "leão"]
+    elif temas == "2":
+        palavras = ["maçã", "banana", "laranja", "uva"]
+    elif temas == "3":
+        palavras = ["vermelho", "azul", "verde", "amarelo"]
+    else:
+        print("Tema inválido.")
+        return
+    palavra = random.choice(palavras)
+    letras_adivinhadas = []
+    tentativas = 6
+    while tentativas > 0:
+        print("\nPalavra:", end=" ")
+        for letra in palavra:
+            if letra in letras_adivinhadas:
+                print(letra, end=" ")
+            else:
+                print("_", end=" ")
+        print("\nTentativas restantes:", tentativas)
+        
+        letra = input("Digite uma letra: ").lower()
+        if letra in letras_adivinhadas:
+            print("Você já adivinhou essa letra.")
+            continue
+        
+        letras_adivinhadas.append(letra)
+        
+        if letra not in palavra:
+            tentativas -= 1
+            print("Letra incorreta.")
+        
+        if all(l in letras_adivinhadas for l in palavra):
+            print("\nParabéns! Você adivinhou a palavra:", palavra)
+            return
+    print("\nVocê perdeu! A palavra era:", palavra)
+if __name__ == "__main__":
+    forca()
+    while True:
+        jogar_novamente = input("Deseja jogar novamente? (s/n): ").lower()
+        if jogar_novamente == 's':
+            forca()
+        elif jogar_novamente == 'n':
+            print("Obrigado por jogar!")
+            break
+        else:
+            print("Opção inválida. Por favor, digite 's' ou 'n'.")
+
+
