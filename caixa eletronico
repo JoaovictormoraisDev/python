@@ -1,0 +1,8 @@
+caixa_eletronica = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
+saque = int(input("digite o valor do saque: " ))
+ 
+for notas in caixa_eletronica:
+    quantidade = saque // notas
+    valor = valor % notas
+    if quantidade > 0:
+        print(f"{quantidade} notas de R${notas}")
