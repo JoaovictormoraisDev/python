@@ -1,0 +1,17 @@
+calculadora = int(input("escolha uma opçao de calculo: \n1 - soma\n2 - subtraçao\n3 - multiplicaçao\n4 - divisao"))
+calculo = int(input("digite o primeiro numero: "))
+calculo2 = int(input("digite o segundo numero: "))
+ 
+if calculadora == 1:
+    print("soma:", calculo + calculo2)    
+elif calculadora == 2:    
+    print("subtraçao:", calculo - calculo2)
+elif calculadora == 3:
+    print("multiplicaçao:", calculo * calculo2)
+elif calculadora == 4:
+    print("divisao:", calculo / calculo2)
+else:
+    print("opçao invalida")
+
+for x in range(10):
+    print("william badalhoca", x)
