@@ -13,5 +13,3 @@ elif calculadora == 4:
 else:
     print("opçao invalida")
 
-for x in range(10):
-    print("william badalhoca", x)
